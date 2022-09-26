@@ -36,7 +36,7 @@ public class Viking {
  			//tant que les PV de this (premier viking) sont >0
  		if(this.hitPoints >0) {
  				//les PV de other baisse de 6 (le premier viking inflige 6 points de dégâts)
- 			other.hitPoints = other.hitPoints - 6;
+ 			other.hitPoints -= 6;
  					//le premier viking (this) prend la place de deuxieme viking (other) et deviens à son tour other
  			other.attack3(this);
  		}
