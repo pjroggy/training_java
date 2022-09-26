@@ -24,7 +24,7 @@ public class App {
 		Viking viking1 = new Viking();
 		Viking viking2 = new Viking();
 
-		viking1.attack2(viking1);
+		viking1.attack2(viking2);
 
 		System.out.println(viking1.hitPoints()); // should equal 6!
 		System.out.println(viking2.hitPoints()); // should equal 0! XX

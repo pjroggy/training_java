@@ -8,8 +8,8 @@ public class Swordsman {
     public Swordsman(){
         this.hitPoints = 100;
     }
-
-    // ceci est une methode
+    //par defaut un objet est designé par this
+    // ceci est une methode, sans retour(void), nommée attack1, (type du paramètre => Swordsman, nommé other){corps de la méthode}
     public void attack1(Swordsman other) {
         Swordsman swordsman1 = this;
         Swordsman swordsman2 = other;
