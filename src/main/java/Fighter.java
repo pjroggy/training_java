@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 public class Fighter {
 	
 	private int hitpoints1;
@@ -51,4 +52,19 @@ public class Fighter {
 			return this.hitpointss;
 		}
 		
+=======
+public abstract class Fighter {
+
+    protected int hitPoints;
+
+    public Fighter(int hitPoints){
+        this.hitPoints = hitPoints;
+    }
+
+    public int hitPoints() {
+        return Math.max(this.hitPoints, 0);
+    }
+
+    public abstract void attack(Fighter other);
+>>>>>>> 4fe5dacd2dd47364a8e9d0326ab65c2865925aa5
 }		

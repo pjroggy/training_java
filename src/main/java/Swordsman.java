@@ -1,16 +1,32 @@
 // ceci est une classe
-public class Swordsman {
+public class Swordsman extends Fighter {
 
     // ceci est un attribut de classe
-    private int hitPoints;
+//    private int hitPoints;
 
     // ceci est un constructeur (methode qui porte le nom de la classe)
     public Swordsman(){
-        this.hitPoints = 100;
+        super(100);
+//        this.hitPoints = 100;
     }
-    //par defaut un objet est designé par this
-    // ceci est une methode, sans retour(void), nommée attack1, (type du paramètre => Swordsman, nommé other){corps de la méthode}
-    public void attack1(Swordsman other) {
+
+//    public void attack(Swordsman other) {
+//         delegation
+//        this.attack1(other);
+//    }
+
+    @Override
+    public void attack(Fighter other) {
+        // delegation
+        this.attack3(other);
+    }
+
+
+    //par defaut un objet est designï¿½ par this
+    // ceci est une methode, sans retour(void), nommï¿½e attack1, (type du paramï¿½tre => Swordsman, nommï¿½ other){corps de la mï¿½thode}
+    @Deprecated
+    // TODO essayer de rendre attack1 generique pour les Figthers /!\
+    private void attack1(Swordsman other) {
         Swordsman swordsman1 = this;
         Swordsman swordsman2 = other;
         // tant que... les points de vie de swordsman1 sont superieurs a 0
@@ -28,7 +44,9 @@ public class Swordsman {
         }
     }
 
-    public void attack2(Swordsman other) {
+    @Deprecated
+    // TODO essayer de rendre attack2 generique pour les Figthers /!\
+    private void attack2(Swordsman other) {
         Swordsman swordsman1 = this;
         Swordsman swordsman2 = other;
 
@@ -46,18 +64,19 @@ public class Swordsman {
     }
 
     // cest une methode recursive +++
-    public void attack3(Swordsman other) {
+    public void attack3(Fighter other) {
         // tant que... les points de vie de swordsman1 sont superieurs a 0
         if(this.hitPoints > 0) {
             // swordsman1 frappe !
             other.hitPoints = other.hitPoints - 5; // ~ swordsman2.hitPoints -= 5
 
             // swordsman2 m'attaque !
-            other.attack3(this);
+            other.attack(this);
         }
     }
 
-    public int hitPoints() {
-        return this.hitPoints;
-    }
+//    public int hitPoints() {
+//        return this.hitPoints;
+//    }
+
 }
