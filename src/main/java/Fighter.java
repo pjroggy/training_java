@@ -1,23 +1,23 @@
 
 public class Fighter {
 	
-	private int hitpoints;
-	private int hitpointss;
+	private int hitpoints1;
+	private int hitpointss1;
 	
 		public Fighter() {
-			this.hitpoints = 100;
-			this.hitpointss = 120;
+			this.hitpoints1 = 100;
+			this.hitpoints1 = 120;
 		}
 		
 		public void attack1(Fighter other) {
 			Fighter swordsman = this;
 			Fighter viking = other;
 			
-			while (swordsman.hitpoints > 0 && viking.hitpointss >0) {
-				viking.hitpointss -= 5;
+			while (swordsman.hitpoints1 > 0 && viking.hitpoints1 >0) {
+				viking.hitpoints1 -= 5;
 			}
-			if(viking.hitpointss > 0) {
-				swordsman.hitpoints -=6;
+			if(viking.hitpoints1 > 0) {
+				swordsman.hitpoints1 -=6;
 			}
 		}
 		
@@ -25,9 +25,9 @@ public class Fighter {
 			Fighter swordsman = this;
 			Fighter viking = other;
 			
-			while (swordsman.hitpoints > 0) {
-				viking.hitpointss -=5;
-				swordsman.hitpoints -=6;
+			while (swordsman.hitpoints1 > 0) {
+				viking.hitpoints1 -=5;
+				swordsman.hitpoints1 -=6;
 				
 				Fighter fighterTemp = swordsman;
 				swordsman = viking;
@@ -36,18 +36,19 @@ public class Fighter {
 		}
 		
 		public void attack3(Fighter other) {
-			if(this.hitpoints >0 && this.hitpointss >0) {
-				other.hitpoints -= 6;
-				other.hitpointss -= 5;
+			if(this.hitpoints1 >0 && this.hitpoints1 >0) {
+				other.hitpoints1 -= 6;
+				other.hitpoints1 -= 5;
 				
 				other.attack3(this);
 			}
 				
 	}
-		public int hitpoints;
-		public int hitpointss;	
-			
-		return this.hitpoints;
-		return this.hitpointss;
-	}	
+		public int hitpoints() {
+			return this.hitpoints;	
+		}
+		public int hitpointss() {
+			return this.hitpointss;
+		}
+		
 }		

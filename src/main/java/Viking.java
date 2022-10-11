@@ -13,9 +13,11 @@ public class Viking {
  		
  		while(viking1.hitPoints > 0 && viking2.hitPoints > 0) {
  			viking2.hitPoints -= 6;
- 		}
- 		if(viking2.hitPoints > 0) {
+ 			
+ 			if(viking2.hitPoints > 0) {
  			viking1.hitPoints -= 6;
+ 		}
+ 		
  		}
  	}
  	
